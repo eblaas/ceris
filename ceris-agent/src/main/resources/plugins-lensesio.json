@@ -1,0 +1,566 @@
+[
+  {
+    "name": "aws-s3",
+    "version": "4.2.0",
+    "title": "AWS S3",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-s3/versions/10.4.2/assets/s3.jpg",
+    "description": "Copy data between Kafka and AWS S3.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/s3sinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-aws-s3-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-aws-s3-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "source",
+      "sink"
+    ],
+    "tags": [
+      "aws",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "io.lenses.streamreactor.connect.aws.s3.sink.S3SinkConnector",
+      "io.lenses.streamreactor.connect.aws.s3.source.S3SourceConnector"
+    ]
+  },
+  {
+    "name": "azure-document-db",
+    "version": "4.2.0",
+    "title": "Azure Document Db Sink",
+    "description": "Copy data from Kafka to Azure Document Db.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/documentdbsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-azure-documentdb-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-azure-documentdb-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "azure",
+      "cosmos",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.azure.documentdb.sink.DocumentDbSinkConnector"
+    ]
+  },
+  {
+    "name": "cassandra",
+    "version": "4.2.0",
+    "title": "Cassandra Source/Sink",
+    "description": "Copy data between Cassandra and Kafka.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/cassandrasinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-cassandra-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-cassandra-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "source",
+      "sink"
+    ],
+    "tags": [
+      "cassandra",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.cassandra.source.CassandraSourceConnector",
+      "com.datamountaineer.streamreactor.connect.cassandra.sink.CassandraSinkConnector"
+    ]
+  },
+  {
+    "name": "mqtt",
+    "version": "4.2.0",
+    "title": "MQTT Source/Sink",
+    "description": "Read/Write data from MQTT",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-mqtt/versions/1.7.0/assets/mqtt.png",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/mqttsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-mqtt-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-mqtt-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "source",
+      "sink"
+    ],
+    "tags": [
+      "mqtt",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.mqtt.source.MqttSourceConnector",
+      "com.datamountaineer.streamreactor.connect.mqtt.sink.MqttSinkConnector"
+    ]
+  },
+  {
+    "name": "elastic6",
+    "version": "4.2.0",
+    "title": "ElasticSearch 6 Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-elasticsearch/versions/14.0.6/assets/elasticsearch.jpg",
+    "description": "Copy data from Kafka to Elastic Search 6.x w. tcp or http",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/elasticsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-elastic6-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-elastic6-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "elasticsearch",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.elastic6.ElasticSinkConnector"
+    ]
+  },
+  {
+    "name": "elastic7",
+    "version": "4.2.0",
+    "title": "ElasticSearch 7 Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-elasticsearch/versions/14.0.6/assets/elasticsearch.jpg",
+    "description": "Copy data from Kafka to Elastic Search 7.x",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/elasticsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-elastic7-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-elastic7-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "elasticsearch",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.elastic7.ElasticSinkConnector"
+    ]
+  },
+  {
+    "name": "ftp",
+    "version": "4.2.0",
+    "title": "FTP Source",
+    "description": "Kafka Connect source connector that monitors files on an FTP server and feeds changes into Kafka.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sources/ftpsourceconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-ftp-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-ftp-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "source"
+    ],
+    "tags": [
+      "ftp",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.ftp.source.FtpSourceConnector"
+    ]
+  },
+  {
+    "name": "hazelcast",
+    "version": "4.2.0",
+    "title": "Hazelcast Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/hazelcast/hazelcast-jet-kafka/versions/3.1/assets/Hazelcast-Jet-Logo-Blue_Dark_400px.png",
+    "description": "A Kafka Connect sink connector for writing records from Kafka to Hazelcast.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/hazelcastsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-hazelcast-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-hazelcast-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "ftp",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.hazelcast.sink.HazelCastSinkConnector"
+    ]
+  },
+  {
+    "name": "hbase",
+    "version": "4.2.0",
+    "title": "HBase Sink",
+    "description": "Kafka Connect sink connector for writing data from Kafka to HBase.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/hbasesinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-hbase-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-hbase-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "hbase",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.hbase.HbaseSinkConnector"
+    ]
+  },
+  {
+    "name": "hive",
+    "version": "4.2.0",
+    "title": "Hive Source",
+    "description": "Kafka Connect source connector for reading data from Hive and writing to Kafka.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sources/hivesourceconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-hive-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-hive-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "source"
+    ],
+    "tags": [
+      "hive",
+      "hadoop",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.landoop.streamreactor.connect.hive.source.HiveSourceConnector"
+    ]
+  },
+  {
+    "name": "influxdb",
+    "version": "4.2.0",
+    "title": "InfluxDB Sink",
+    "description": "Kafka Connect sink connector for writing data from Kafka to InfluxDB v1.x",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/influxsinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-influxdb-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-influxdb-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "influxdb",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.influx.InfluxSinkConnector"
+    ]
+  },
+  {
+    "name": "jms",
+    "version": "4.2.0",
+    "title": "JMS Source/Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-jms-sink/versions/2.1.4/assets/jms.jpeg",
+    "description": "A Kafka Connect JMS source/sink connector to subscribe/write messages on JMS queues and topics and write/read them to/from a Kafka topic.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/jmssinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-jms-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-jms-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink",
+      "source"
+    ],
+    "tags": [
+      "jms",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.jms.source.JMSSourceConnector",
+      "com.datamountaineer.streamreactor.connect.jms.sink.JMSSinkConnector"
+    ]
+  },
+  {
+    "name": "kudu",
+    "version": "4.2.0",
+    "title": "Kudu Sink",
+    "description": "Kafka Connect sink connector for writing data from Kafka to Kudu.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/kudusinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-kudu-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-kudu-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "kudu",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.kudu.sink.KuduSinkConnector"
+    ]
+  },
+  {
+    "name": "mongodb",
+    "version": "4.2.0",
+    "title": "MongoDB Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/mongodb/kafka-connect-mongodb/versions/1.10.0/assets/mongodb-leaf.png",
+    "description": "Kafka Connect sink connector for writing data from Kafka to MongoDB.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/mongosinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-mongodb-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-mongodb-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "mongodb",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.mongodb.sink.MongoSinkConnector"
+    ]
+  },
+  {
+    "name": "redis",
+    "version": "4.2.0",
+    "title": "Redis Sink",
+    "logo": "https://d1i4a15mxbxib1.cloudfront.net/api/plugins/redis/redis-enterprise-kafka/versions/6.7.1/assets/redis-cube.png",
+    "description": "Kafka Connect sink connector for writing data from Kafka to Redis.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sinks/redissinkconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-redis-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-redis-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink"
+    ],
+    "tags": [
+      "redis",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.redis.sink.RedisSinkConnector"
+    ]
+  },
+  {
+    "name": "pulsar",
+    "version": "4.2.0",
+    "title": "Pulsar Source/Sink",
+    "description": "A Kafka Connect connector to write/read events from Apache Pulsar to Apache Kafka.",
+    "documentation_url": "https://docs.lenses.io/5.1/connectors/sources/pulsarsourceconnector/",
+    "owner": {
+      "username": "lensesio",
+      "type": "Organization",
+      "name": "lensesio",
+      "url": "https://lenses.io"
+    },
+    "archive": {
+      "name": "kafka-connect-pulsar-4.2.0.zip",
+      "url": "https://github.com/lensesio/stream-reactor/releases/download/4.2.0/kafka-connect-pulsar-4.2.0.zip",
+      "mime_type": "application/zip"
+    },
+    "license": [
+      {
+        "name": "Apache 2.0"
+      }
+    ],
+    "component_types": [
+      "sink",
+      "source"
+    ],
+    "tags": [
+      "pulsar",
+      "lensesio",
+      "etl"
+    ],
+    "requirements": [
+      "com.datamountaineer.streamreactor.connect.pulsar.source.PulsarSourceConnector",
+      "com.datamountaineer.streamreactor.connect.pulsar.sink.PulsarSinkConnector"
+    ]
+  }
+]

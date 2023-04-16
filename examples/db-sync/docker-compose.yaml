@@ -1,0 +1,80 @@
+version: "3.9"
+services:
+  source-db:
+    image: debezium/example-postgres:2.1
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "15432:5432"
+  destination-db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=cdc
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "25432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  pgadmin4:
+    image: dcagatay/pwless-pgadmin4:latest
+    depends_on:
+      - source-db
+    ports:
+      - 6060:80
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: "source-db"
+      POSTGRES_USER_2: postgres
+      POSTGRES_PASSWORD_2: postgres
+      POSTGRES_HOST_2: "destination-db"
+  ceris:
+    image: eblaas/ceris:latest
+    depends_on:
+      - source-db
+      - destination-db
+    ports:
+      - 4567:4567
+    environment:
+      CERIS_EMBEDDED_DATA_PATH: /opt/cersi/data
+      CERIS_AUTH_ENABLED: false
+      CERIS_EMBEDDED_PLUGINS_INSTALL: "debezium/debezium-connector-postgresql:2.0.1,confluentinc/kafka-connect-jdbc:10.6.4"
+      CERIS_SECRET_SRC_DB_USER: postgres
+      CERIS_SECRET_SRC_DB_PWD: postgres
+      CERIS_SECRET_DEST_DB_USER: postgres
+      CERIS_SECRET_DEST_DB_PWD: postgres
+      CERIS_INIT_RESOURCES: |-
+        {
+          "connectors": [
+            {
+              "name": "source-db-stream",
+              "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+              "topic.prefix": "cdc",
+              "database.user": "postgres",
+              "database.hostname": "source-db",
+              "database.dbname": "$${env:CERIS_SECRET_SRC_DB_USER}",
+              "database.password": "$${env:CERIS_SECRET_SRC_DB_PWD}"
+            },
+            {
+              "name": "destination-db-sink",
+              "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+              "connection.url": "jdbc:postgresql://destination-db:5432/cdc",
+              "connection.user": "$${env:CERIS_SECRET_DEST_DB_USER}",
+              "connection.password": "$${env:CERIS_SECRET_DEST_DB_PWD}",
+              "topics": "cdc.inventory.customers,cdc.inventory.orders,cdc.inventory.products,cdc.inventory.products_on_hand",
+              "delete.enabled": true,
+              "auto.evolve": true,
+              "auto.create": true,
+              "insert.mode": "upsert",
+              "pk.mode": "record_key",
+              "transforms": "unwrap",
+              "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
+            }
+          ]
+        }
+#    # Persist data to host folder
+#    volumes:
+#      - ./data/:/opt/cersi/data

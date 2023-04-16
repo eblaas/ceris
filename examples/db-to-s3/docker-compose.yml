@@ -1,0 +1,73 @@
+version: "3.9"
+services:
+  source-db:
+    image: debezium/example-postgres:2.1
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "15432:5432"
+  pgadmin4:
+    image: dcagatay/pwless-pgadmin4:latest
+    depends_on:
+      - source-db
+    ports:
+      - 6060:80
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: "source-db"
+  s3:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    entrypoint: sh
+    command: -c 'mkdir -p /data/sync && minio server /data --console-address ":9001"'
+  ceris:
+    image: eblaas/ceris:latest
+    depends_on:
+      - source-db
+      - s3
+    ports:
+      - 4567:4567
+    environment:
+      CERIS_EMBEDDED_DATA_PATH: /opt/cersi/data
+      CERIS_AUTH_ENABLED: false
+      CERIS_EMBEDDED_PLUGINS_INSTALL: "debezium/debezium-connector-postgresql:2.0.1,confluentinc/kafka-connect-s3:10.4.2"
+      CERIS_SECRET_SRC_DB_USER: postgres
+      CERIS_SECRET_SRC_DB_PWD: postgres
+      CERIS_SECRET_S3_ACCESS_KEY: minio
+      CERIS_SECRET_S3_SECRET_KEY: minio123
+      CERIS_INIT_RESOURCES: |-
+        {
+          "connectors": [
+            {
+              "name": "source-db-stream",
+              "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+              "topic.prefix": "cdc",
+              "database.user": "postgres",
+              "database.hostname": "source-db",
+              "database.dbname": "$${env:CERIS_SECRET_SRC_DB_USER}",
+              "database.password": "$${env:CERIS_SECRET_SRC_DB_PWD}"
+            },
+            {
+              "name": "s3-sink",
+              "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+              "topics": "cdc.inventory.customers,cdc.inventory.orders,cdc.inventory.products,cdc.inventory.products_on_hand",
+              "store.url": "http://s3:9000",
+              "aws.access.key.id": "$${env:CERIS_SECRET_S3_ACCESS_KEY}",
+              "aws.secret.access.key": "$${env:CERIS_SECRET_S3_SECRET_KEY}",
+              "s3.bucket.name": "sync",
+              "s3.region": "us-west-2",
+              "flush.size": "1",
+              "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+              "schema.compatibility": "NONE",
+              "storage.class": "io.confluent.connect.s3.storage.S3Storage"
+            }
+          ]
+        }

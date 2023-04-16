@@ -1,0 +1,25 @@
+{
+  "connectors": [
+    {
+      "name": "demo-source-connector-stores",
+      "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+      "tasks.max": 1,
+      "kafka.topic": "demo.stores",
+      "quickstart": "stores",
+      "max.interval": 3000
+    },
+    {
+      "name": "demo-sink-connector-csv-file",
+      "connector.class": "io.ceris.connector.CsvFileStreamSinkConnector",
+      "tasks.max": 1,
+      "topics.regex": "demo.*",
+      "path": "demo"
+    },
+    {
+      "name": "demo-sink-connector-stdout-logging",
+      "connector.class": "io.ceris.connector.LoggingStreamSinkConnector",
+      "tasks.max": 1,
+      "topics.regex": "demo.*"
+    }
+  ]
+}

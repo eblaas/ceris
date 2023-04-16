@@ -1,0 +1,9 @@
+site_name: Ceris Docs
+site_url: https://example.com/
+nav:
+  - Home: index.md
+  - 'Getting Started': getting-started.md
+  - Configuation: configuration.md
+  - Api: api.md
+theme:
+  name: readthedocs

@@ -1,0 +1,18 @@
+<code_scheme name="Default" version="173">
+  <codeStyleSettings language="JAVA">
+    <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true" />
+    <option name="CALL_PARAMETERS_WRAP" value="1" />
+    <option name="METHOD_CALL_CHAIN_WRAP" value="1" />
+    <option name="TERNARY_OPERATION_WRAP" value="2" />
+    <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
+    <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+    <option name="KEEP_SIMPLE_LAMBDAS_IN_ONE_LINE" value="true" />
+    <option name="KEEP_SIMPLE_CLASSES_IN_ONE_LINE" value="true" />
+    <option name="ASSIGNMENT_WRAP" value="1" />
+    <option name="WRAP_LONG_LINES" value="true" />
+    <option name="METHOD_ANNOTATION_WRAP" value="1" />
+    <option name="FIELD_ANNOTATION_WRAP" value="1" />
+    <option name="PARAMETER_ANNOTATION_WRAP" value="1" />
+    <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
+  </codeStyleSettings>
+</code_scheme>

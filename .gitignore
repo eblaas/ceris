@@ -1,0 +1,12 @@
+.project
+.classpath
+.DS_Store
+.local
+
+*.iml
+.idea
+
+data
+demo
+docs/site
+

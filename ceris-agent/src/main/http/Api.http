@@ -1,0 +1,8 @@
+GET http://localhost:8091/health
+Content-Type: application/json
+
+{
+  "plugin": "confluentinc/kafka-connect-jdbc:latest"
+}
+
+###
