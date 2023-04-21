@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/api/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Api - Ceris Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Api";
+        var mkdocs_page_input_path = "api.md";
+        var mkdocs_page_url = "/api/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Ceris Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Api</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#content-types">Content Types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#open-endpoints">Open Endpoints</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoints-that-require-authentication">Endpoints that require authentication</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#current-user-related">Current User related</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#extension-to-kafka-connect-api">Extension to kafka connect api</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monitoring-endpoints">Monitoring endpoints</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ceris Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Api</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ceris-rest-api">Ceris REST API</h1>
+<h2 id="authentication">Authentication</h2>
+<p>Supported authentication methods:</p>
+<ul>
+<li>Basic auth (<code>Authorization:Basic &lt;base64&gt;</code>)</li>
+<li>Bearer token (<code>Authorization:Bearer &lt;token&gt;</code>)</li>
+</ul>
+<h2 id="content-types">Content Types</h2>
+<p>The REST API only supports <code>application/json</code> as both the request and response content type.</p>
+<h2 id="open-endpoints">Open Endpoints</h2>
+<p>Open endpoints require no authentication.</p>
+<ul>
+<li>Login : <code>POST /auth/login/</code></li>
+<li>Health : <code>GET /health</code></li>
+</ul>
+<h2 id="endpoints-that-require-authentication">Endpoints that require authentication</h2>
+<p>Closed endpoints require a valid token to be included in the header of the request. A token can be acquired from the
+login endpoint above.</p>
+<h3 id="current-user-related">Current User related</h3>
+<p>Information related to the current user whose token is provided with the request:</p>
+<ul>
+<li>Me : <code>GET /api/connect/me</code></li>
+</ul>
+<h3 id="extension-to-kafka-connect-api">Extension to kafka connect api</h3>
+<p>Additional endpoints to
+the <a href="https://docs.confluent.io/platform/current/connect/references/restapi.html#connectors">connect API</a> for viewing and
+manipulating connectors, plugins, messages</p>
+<ul>
+<li>List defined secrets : <code>GET /api/connect/secrets</code></li>
+<li>List connector topics : <code>GET /api/connect/topics</code></li>
+<li>Get topic schema : <code>GET /api/connect/topics/:topic/schema</code></li>
+<li>Get topic messages : <code>GET /api/connect/topics/:topic/messages</code></li>
+<li>List installed plugins : <code>GET /api/connect/connector-plugins</code></li>
+<li>Install new plugin : <code>POST /api/connect/connector-plugins</code></li>
+<li>Uninstall plugin : <code>DELETE /api/connect/connector-plugins/:id</code></li>
+<li>List installable plugins : <code>GET /api/connect/plugins-store</code></li>
+<li>Proxy to
+  kafka <a href="https://docs.confluent.io/platform/current/connect/references/restapi.html#connectors">connect API</a> : <code>GET|POST|PUT|DELETE /api/connect/*</code></li>
+</ul>
+<h3 id="monitoring-endpoints">Monitoring endpoints</h3>
+<ul>
+<li>Embedded server status : <code>GET /api/connect/status</code></li>
+<li>Connector metrics : <code>GET /api/connect/metrics</code></li>
+<li>Connector metrics prometheus : <code>GET /api/connect/prometheus</code></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../configuration/" class="btn btn-neutral float-left" title="Configuation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
