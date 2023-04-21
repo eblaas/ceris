@@ -3,7 +3,7 @@
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/eblaas/ceris/1.0.0?logo=docker&style=flat-square)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/eblaas/ceris/1.0.0?logo=docker&label=size&style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/eblaas/ceris?label=pulls&logo=docker&style=flat-square)
-[![GitHub](https://img.shields.io/github/license/OneCricketeer/apache-kafka-connect-docker?color=%23ce353d&logo=apache&style=flat-square)](https://github.com/OneCricketeer/apache-kafka-connect-docker/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/ceris/ceris?color=%23ce353d&logo=apache&style=flat-square)](https://github.com/eblaas/ceris/blob/main/LICENSE)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -20,7 +20,7 @@
   <p align="center">
     Open-source data integration runtime that helps you consolidate your data
     <br />
-    <a href="https://github.com/eblaas/ceris"><strong>Explore the docs »</strong></a>
+    <a href="https://eblaas.github.io/ceris/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/eblaas/ceris/issues">Report Bug</a>
