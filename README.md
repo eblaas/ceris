@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/eblaas/ceris/1.0.0?logo=docker&style=flat-square)
-![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/eblaas/ceris/1.0.0?logo=docker&label=size&style=flat-square)
-![Docker Pulls](https://img.shields.io/docker/pulls/eblaas/ceris?label=pulls&logo=docker&style=flat-square)
-[![GitHub](https://img.shields.io/github/license/ceris/ceris?color=%23ce353d&logo=apache&style=flat-square)](https://github.com/eblaas/ceris/blob/main/LICENSE)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/eblaas/ceris/1.0.0?logo=docker)
+![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/eblaas/ceris/1.0.0?logo=docker&label=size)
+![Docker Pulls](https://img.shields.io/docker/pulls/eblaas/ceris?label=pulls&logo=docker)
+[![GitHub](https://img.shields.io/github/license/eblaas/ceris?logo=apache)](https://github.com/eblaas/ceris/blob/main/LICENSE)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -178,7 +178,7 @@ Profile: [https://github.com/eblaas](https://github.com/eblaas)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ernst-blaas-678306238
 [product-screenshot]: docs/docs/img/ceris-screen.png
 [Kafka]: https://img.shields.io/badge/Kafka%20Connect-000000?style=flat-square&logo=apachekafka&logoColor=white
