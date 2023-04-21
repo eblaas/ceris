@@ -71,8 +71,7 @@ public class Configuration {
                            envVariables.get("KAFKA_SCHEMA_REGISTRY_URL"));
 
         envVariables.putIfAbsent("CONNECT_BOOTSTRAP_SERVERS", "localhost:9092");
-        envVariables.putIfAbsent("CONNECT_HOST_NAME", "0.0.0.0");
-        envVariables.putIfAbsent("CONNECT_REST_PORT", "8083");
+        envVariables.putIfAbsent("CONNECT_LISTENERS", "http://0.0.0.0:8083");
         envVariables.putIfAbsent("CONNECT_GROUP_ID", "kafka-connect");
         envVariables.putIfAbsent("CONNECT_CONFIG_STORAGE_TOPIC", "_connect-configs");
         envVariables.putIfAbsent("CONNECT_OFFSET_STORAGE_TOPIC", "_connect-offsets");

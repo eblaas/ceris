@@ -13,7 +13,7 @@ jobs:
       - name: Install node dependencies
         working-directory: ./ceris-ui
         run: npm install
-      - name: Build cersi UI ${{github.ref_name}}
+      - name: Build cersi UI ${{ github.ref_name }}
         working-directory: ./ceris-ui
         run: npm run build
       - name: Set up JDK 17
@@ -25,23 +25,23 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.8.2
-      - name: Set pom version ${{github.ref_name}}
+      - name: Set pom version ${{ github.ref_name }}
         working-directory: ./ceris-agent
-        run: mvn versions:set -DnewVersion=${{github.ref_name}}
+        run: mvn --batch-mode --no-transfer-progress versions:set -DnewVersion=${{github.ref_name}}
       - name: Build ceris agent
         working-directory: ./ceris-agent
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: mvn --batch-mode -P release install
-      - name: Create Release ${{ github.ref }}
+        run: mvn --batch-mode --no-transfer-progress -P release install
+      - name: Create Release ${{ github.ref_name }}
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{github.ref_name}}
+          release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
