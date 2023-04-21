@@ -94,6 +94,8 @@ public class Router implements Startable {
             response.type(MediaType.APPLICATION_JSON);
             response.body(new ApiCallError(HttpStatus.SC_INTERNAL_SERVER_ERROR, exception.getMessage()).toJson());
         });
+
+        awaitInitialization();
     }
 
     @Override
